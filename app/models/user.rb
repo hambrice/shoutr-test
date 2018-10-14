@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :shouts, dependent: :destroy
   has_many :likes
   has_many :liked_shouts, through: :likes, source: :shout
+  has_many :following_relationships, foreign_key: :follower_id
+  has_many :followed_users, through: :following_relationships
 
   def like(shout)
     liked_shouts << shout
@@ -22,4 +24,9 @@ class User < ApplicationRecord
   def to_param
     username
   end
+
+  def follow(user)
+    followed_users << user
+  end
+
 end
