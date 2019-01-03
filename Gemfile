@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'clearance'
 gem 'pry'
 gem 'paperclip'
+gem "sunspot_rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -39,6 +41,7 @@ gem 'paperclip'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "sunspot_solr"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
